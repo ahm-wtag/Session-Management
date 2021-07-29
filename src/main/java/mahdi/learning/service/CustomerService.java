@@ -1,0 +1,22 @@
+package mahdi.learning.service;
+
+import mahdi.learning.model.Customer;
+import mahdi.learning.repostiory.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
+public class CustomerService {
+
+    @Autowired
+    CustomerRepository repository;
+
+    public Long save( Customer customer ) {
+        return repository.save(customer);
+    }
+
+
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    
+
+<!--Tagging database -->
+    <changeSet id="create-tag-version1" author="mahdi">
+        <tagDatabase tag="version1"/>
+    </changeSet>
+    
+    <changeSet id="create-table-customer" author="mahdi">
+        <createTable tableName="customer">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_name" type="varchar(50)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="password" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-tag-version2" author="mahdi">
+        <tagDatabase tag="version2"/>
+    </changeSet>
+
+
+
+
+    <changeSet id="create-table-session" author="mahdi">
+        <createTable tableName="session">
+            <column name="session_id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="customer_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</databaseChangeLog>
