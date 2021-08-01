@@ -55,13 +55,9 @@ public class CustomerController {
     }
 
     @GetMapping("/home")
-    public ModelAndView home(@ModelAttribute("name") String name , @CookieValue(value = "sc",defaultValue = "null") String uuid ) {
+    public ModelAndView home(@ModelAttribute("name") String name  ) {
 
         ModelAndView mv = new ModelAndView();
-
-        if ( uuid.equals("null") ) {
-            return new ModelAndView("redirect:/");
-        }
         mv.setViewName("home.jsp");
         mv.addObject("name",name);
         return mv;

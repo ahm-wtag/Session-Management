@@ -1,5 +1,6 @@
 package mahdi.learning.config;
 
+import mahdi.learning.middleware.AuthenticationMiddleware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,7 @@ public class DispatcherConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor( new LocaleChangeInterceptor());
+        registry.addInterceptor( new AuthenticationMiddleware()).addPathPatterns("/**").excludePathPatterns("/login","/register");
 
     }
 }

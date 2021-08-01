@@ -5,7 +5,7 @@ mahdi/learning/config/JpaConfig.class
 mahdi/learning/service/CustomerService.class
 mahdi/learning/config/WebMvcInitialization.class
 mahdi/learning/controller/SessionController.class
-mahdi/learning/middleware/AuthorizedChecker.class
+mahdi/learning/middleware/AuthenticationMiddleware.class
 mahdi/learning/repostiory/SessionRepository.class
 mahdi/learning/config/DispatcherConfig.class
 mahdi/learning/model/Customer.class
